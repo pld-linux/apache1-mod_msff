@@ -8,6 +8,7 @@ Release:	1
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://unlikely.org/mike/hacks/mod_%{mod_name}.c
+# Source0-md5:	28bf69adb4beb41d82f16c2cc2e9d656
 URL:		http://davenet.userland.com/2001/06/13
 BuildRequires:	%{apxs}
 BuildRequires:	apache(EAPI)-devel
