@@ -4,7 +4,7 @@ Summary:	Apache module: Microsoft Free Fridays: reject MSIE on Friday
 Summary(pl):	Modu³ do apache: Wolne Pi±tki Microsoftu: odrzuca MSIE w pi±tki
 Name:		apache1-mod_%{mod_name}
 Version:	0.1
-Release:	1.1
+Release:	1.2
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://unlikely.org/mike/hacks/mod_%{mod_name}.c
@@ -56,7 +56,7 @@ if [ -f /var/lock/subsys/apache ]; then
 	/etc/rc.d/init.d/apache restart 1>&2
 fi
 
-%preun
+%postun
 if [ "$1" = "0" ]; then
 	if [ -f /var/lock/subsys/apache ]; then
 		/etc/rc.d/init.d/apache restart 1>&2
