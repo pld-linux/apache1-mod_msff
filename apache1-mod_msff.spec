@@ -12,8 +12,9 @@ Source0:	http://unlikely.org/mike/hacks/mod_%{mod_name}.c
 URL:		http://davenet.userland.com/2001/06/13
 BuildRequires:	%{apxs}
 BuildRequires:	apache1-devel >= 1.3.33-2
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	apache1 >= 1.3.33-2
-Obsoletes:	apache-mod_%{mod_name} <= 0.1
+Obsoletes:	apache-mod_msff <= 0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_pkglibdir	%(%{apxs} -q LIBEXECDIR 2>/dev/null)
@@ -22,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 mod_msff.c: Microsoft Free Fridays: reject MSIE on Friday.
 
-More info: http://davenet.userland.com/2001/06/13
+More info: <http://davenet.userland.com/2001/06/13>
 
 %description -l pl
 Modu³ do serwera Apache zabraniaj±cy w pi±tki dostêpu do serwera
@@ -30,7 +31,7 @@ przegl±darkom Microsoftu, pomagaj±cy zarz±dowi tej firmy w pe³nej
 realizacji Wolnych Pi±tków (czyli dni lu¼niejszych, w których _nawet_
 mo¿na przyj¶æ do pracy w d¿insach :-))))).
 
-Wiêcej informacji: http://davenet.userland.com/2001/06/13
+Wiêcej informacji: <http://davenet.userland.com/2001/06/13>
 
 %prep
 %setup -q -T -c
@@ -52,15 +53,11 @@ echo 'LoadModule %{mod_name}_module	modules/mod_%{mod_name}.so' > \
 rm -rf $RPM_BUILD_ROOT
 
 %post
-if [ -f /var/lock/subsys/apache ]; then
-	/etc/rc.d/init.d/apache restart 1>&2
-fi
+%service -q apache restart
 
 %postun
 if [ "$1" = "0" ]; then
-	if [ -f /var/lock/subsys/apache ]; then
-		/etc/rc.d/init.d/apache restart 1>&2
-	fi
+	%service -q apache restart
 fi
 
 %files
