@@ -1,7 +1,7 @@
 %define		mod_name	msff
 %define 	apxs		/usr/sbin/apxs1
 Summary:	Apache module: Microsoft Free Fridays: reject MSIE on Friday
-Summary(pl.UTF-8):   Moduł do apache: Wolne Piątki Microsoftu: odrzuca MSIE w piątki
+Summary(pl.UTF-8):	Moduł do apache: Wolne Piątki Microsoftu: odrzuca MSIE w piątki
 Name:		apache1-mod_%{mod_name}
 Version:	0.1
 Release:	1.2
