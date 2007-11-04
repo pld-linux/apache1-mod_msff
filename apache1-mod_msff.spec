@@ -10,8 +10,7 @@ Group:		Networking/Daemons
 Source0:	http://unlikely.org/mike/hacks/mod_%{mod_name}.c
 # Source0-md5:	28bf69adb4beb41d82f16c2cc2e9d656
 URL:		http://davenet.userland.com/2001/06/13
-BuildRequires:	apache1-apxs
-BuildRequires:	apache1-devel >= 1.3.33-2
+BuildRequires:	apache1-devel >= 1.3.39
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	apache1 >= 1.3.33-2
 Obsoletes:	apache-mod_msff <= 0.1
