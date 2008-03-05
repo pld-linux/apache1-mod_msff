@@ -4,7 +4,7 @@ Summary:	Apache module: Microsoft Free Fridays: reject MSIE on Friday
 Summary(pl.UTF-8):	Moduł do apache: Wolne Piątki Microsoftu: odrzuca MSIE w piątki
 Name:		apache1-mod_%{mod_name}
 Version:	0.1
-Release:	1.2
+Release:	1.3
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://unlikely.org/mike/hacks/mod_%{mod_name}.c
@@ -12,7 +12,7 @@ Source0:	http://unlikely.org/mike/hacks/mod_%{mod_name}.c
 URL:		http://davenet.userland.com/2001/06/13
 BuildRequires:	apache1-devel >= 1.3.39
 BuildRequires:	rpmbuild(macros) >= 1.268
-Requires:	apache1 >= 1.3.33-2
+Requires:	apache1(EAPI)
 Obsoletes:	apache-mod_msff <= 0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
